@@ -37,6 +37,8 @@ void Stack::Push()
         return;
     }
     
+    cout<<"\n Enter City Details :- ";
+    
     cout<<"\n Enter the City Pin Code : ";
     cin>>Temp -> Pin;
     
@@ -61,26 +63,30 @@ void Stack::Pop()
 {
     City *Temp;
     
-    if( Top == NULL)
+    if(Top == NULL)
     {
         cout<<"\n Underflow !!! ";
+        return;
     }
     
-    else
-    {
-        cout<<"\n City Pin Code : "<<Top -> Pin;
-        cout<<"\n City Name : "<<Top -> Name;
+    cout<<"\n City Pin Code : "<<Top -> Pin;
+    cout<<"\n City Name : "<<Top -> Name;
+    
+    cout<<"\n City Details Deleted !!! \n";
         
-        Temp = Top;
+    Temp = Top;
         
-        Top = Top -> Next;
+    Top = Top -> Next;
         
-        delete Temp;
-    }
+    delete Temp;
 }
 
 void Stack::Display()
 {
+    City *Temp;
+    
+    Temp = Top;
+    
     if(Top == NULL)
     {
         cout<<"\n Stack Is Empty !!! \n";
@@ -89,10 +95,10 @@ void Stack::Display()
     
     cout<<endl;
     
-    while(Top != NULL)
+    while(Temp != NULL)
     {
-        cout<<" [ "<<Top -> Pin<<" , "<<Top -> Name<<" ] ->";
-        Top = Top -> Next;
+        cout<<" [ "<<Temp -> Pin<<" , "<<Temp -> Name<<" ] ->";
+        Temp = Temp -> Next;
     }
     
     cout<<" !!! \n";
