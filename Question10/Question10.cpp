@@ -93,7 +93,7 @@ void CopyText() // A function which copies a file into another file
     ofstream out_stream;
     
     in_stream.open("ARTICLE.TXT");
-    out_stream.open("COPY.TXT");    // This will create a new file 
+    out_stream.open("COPY.TXT");    // This will create a new file (if not created before)
     
     while (!in_stream.eof())
     {
